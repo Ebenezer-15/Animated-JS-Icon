@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated JS Icon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<style>
+    #chain, #hourglass, #temperature {
+        font-size: 50px;
+        color: #999;
+        margin: 50px;
+    }
+    body{
+        display: flex;
+        margin: 15% 0;
+        justify-content: center;
+        background-color:#fff;
+    }
+    @media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  body {
+    margin: 50%;
+  }
+  #chain, #hourglass, #temperature{
+      margin: 30px;
+  }
+}
+</style>
+</head>
+<body>
+
+    <div id="chain" class="fa"></div>
+    <br><br>
+    <div id="temperature" class="fa"></div>
+    <br><br>
+    <div id="hourglass" class="fa"></div>
+
+
+    <script>
+        // FOR CHAIN
+        function breakChain (){
+            let chain = document.getElementById('chain');
+            chain.innerHTML = "&#Xf0c1;";
+            setTimeout(function(){
+                chain.innerHTML = "&#Xf127;";
+            },1000);
+        }
+        breakChain();
+        setInterval(breakChain, 2000);
+
+        // FOR TEMPERATURE
+        function temperature(){
+        let temperatureChange = document.getElementById('temperature');
+        temperatureChange.innerHTML =  "&#Xe03f;";
+        setTimeout (function (){
+            temperatureChange.innerHTML = "&#Xe040;";
+        }, 1000);
+    }
+        temperature();
+        setInterval(temperature, 2000);
+
+        //FOR HOUR GLASS
+        function hourGlass (){
+            let time = document.getElementById('hourglass');
+            time.innerHTML="&#Xf252;";
+            setTimeout (function(){
+                time.innerHTML = "&#Xf251;";
+            }, 1000);
+
+            setTimeout (function(){
+                time.innerHTML = "&#Xf253;";
+            },2000);
+        }
+        hourGlass();
+        setInterval(hourGlass, 3000);
+    
+    </script>
+</body>
+</html>
